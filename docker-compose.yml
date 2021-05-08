@@ -3,19 +3,19 @@ services:
   dadjokes_api_container:
     container_name: dadjokes_api_container
     restart: always
-    image: docker.pkg.github.com/dadjokes-io/dad_jokes_api/dadjokes-api-image:latest
+    image: docker.pkg.github.com/dadjokes-io/dad_jokes_api/dadjokes-api-image:beta
     environment:
-      VIRTUAL_HOST: api.dadjokes.io
-      LETSENCRYPT_HOST: api.dadjokes.io
+      VIRTUAL_HOST: betaapi.dadjokes.io
+      LETSENCRYPT_HOST: betaapi.dadjokes.io
     expose:
       - '8080'
   dadjokes_web_container:
     container_name: dadjokes_web_container
     restart: always
-    image: docker.pkg.github.com/dadjokes-io/dadjokes.io/dadjokes-web-image:main
+    image: docker.pkg.github.com/dadjokes-io/dadjokes.io/dadjokes-web-image:beta
     environment:
-      VIRTUAL_HOST: dadjokes.io
-      LETSENCRYPT_HOST: dadjokes.io
+      VIRTUAL_HOST: beta.dadjokes.io
+      LETSENCRYPT_HOST: beta.dadjokes.io
     expose:
       - '3000'
   nginx-proxy:
